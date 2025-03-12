@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/static/images/background.png">
+    <title>m-Learn</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Align items to the left */
+            padding: 20px; /* Add padding for spacing */
+            background-image: url('static/images/background.png'); /* Corrected path separator */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; 
+            color: white; 
+        }
+        h1, h2 {
+            margin: 10px 0; /* Add margin for spacing */
+        }
+        p {
+            font-size: 1.5rem;
+            margin: 20px 0; /* Add margin for spacing */
+        }
+        button {
+            padding: 20px 30px;
+            font-size: 1.5rem;
+            color: white;
+            background-color: #185bec;
+            border: none; /* Remove border */
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+        button:hover {
+            background-color: #d01010; 
+        }
+        h1{
+            font-size: 50px;
+            color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <h1>WELCOME TO M-LEARN</h1>
+    <h2>India's Best Online Learning Platform</h2>
+    <p>
+        Welcome to mLearn, your hub for innovative online education!<br>
+        We offer a diverse range of courses and resources designed to make learning accessible<br>
+        and engaging for everyone. Join us to enhance your skills and unlock your potential today!
+    </p>
+    <form method="post" action="/login" method="POST"> <!-- Corrected action attribute -->
+        <button type="submit">GET STARTED</button> <!-- Changed type to submit -->
+    </form>
+</body>
+</html>

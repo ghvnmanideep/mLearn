@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/static/images/background.png">
+    <title>Signup Page - M-LEARN</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black; 
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            text-align: center;
+            color: white; 
+        }
+        .signup-form {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 12px;
+            width: 350px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, label {
+            color: #ffffff; /* Keep headings and labels white */
+        }
+        .input-group {
+            margin: 15px 0;
+            text-align: left;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.3);
+            color: #5a1dea; /* Keep input text color */
+            font-size: 16px;
+            outline: none;
+        }
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.9); /* Placeholder color remains white */
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #ff4b5c;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ff1e42;
+        }
+        .err-message {
+            color: #ff0000;
+            font-size: 14px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .signup-link p {
+            color: #ffffff; /* Keep signup link text white */
+        }
+        .signup-link a {
+            color: #2600ff; /* Keep link color */
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <form class="signup-form" action="/signup" method="POST">
+        <h1>WELCOME TO M-LEARN</h1>
+        <h2>India's Largest Learning Platform</h2>
+        <h2>Sign Up</h2>
+        <div class="input-group">
+            <label>E-mail</label>
+            <input type="text" placeholder="Enter your email" name="email" required>
+        </div>
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" placeholder="Enter your username" name="uname" required>
+        </div>
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password" name="pwd" required>
+        </div>
+        <button type="submit">Create Account</button>
+        <div class="err-message">
+            {{ err }} {{ msg }}
+        </div>
+        <div class="signup-link">
+            <p>Already have an account? <a href="/">Login here</a></p>
+        </div>
+    </form>
+</body>
+</html>
