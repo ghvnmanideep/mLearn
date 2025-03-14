@@ -11,11 +11,11 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: black; /* Changed to black */
+            background-color: black;
             font-family: 'Poppins', sans-serif;
             margin: 0;
             text-align: center;
-            color: white; /* Set default font color to white */
+            color: white;
         }
         .contact-form {
             background: rgba(255, 255, 255, 0.15);
@@ -26,30 +26,30 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         h1, h2, label {
-            color: #ffffff; /* Keep headings and labels white */
+            color: #ffffff;
         }
         .input-group {
             margin: 15px 0;
             text-align: left;
         }
-        input {
+        input, textarea {
             width: 100%;
             padding: 12px;
             border: none;
             border-radius: 5px;
             background: rgba(255, 255, 255, 0.3);
-            color: #5a1dea; /* Keep input text color */
+            color: #1dea79;
             font-size: 16px;
             outline: none;
         }
-        input::placeholder {
-            color: rgba(255, 255, 255, 0.9); /* Placeholder color remains white */
+        input::placeholder, textarea::placeholder {
+            color: rgba(255, 255, 255, 0.9);
         }
         button {
             width: 100%;
             padding: 12px;
             background: #ff4b5c;
-            color: rgb(0, 0, 0);
+            color: black;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -66,10 +66,10 @@
             font-weight: bold;
         }
         .support-link p {
-            color: #ffffff; /* Keep support link text white */
+            color: #ffffff;
         }
         .support-link a {
-            color: #2600ff; /* Keep link color */
+            color: #2600ff;
             font-weight: bold;
             text-decoration: none;
         }
@@ -79,7 +79,7 @@
     </style>
 </head>
 <body>
-    <form class="contact-form" action="/contact" method="POST"> <!-- Change action to your contact endpoint -->
+    <form class="contact-form" action="/contacting" method="POST">
         <h1>WELCOME TO M-LEARN</h1>
         <h2>Contact Us</h2>
         <div class="input-group">
@@ -92,11 +92,11 @@
         </div>
         <div class="input-group">
             <label>Message</label>
-            <textarea placeholder="Enter your message" name="message" required style="width: 100%; padding: 12px; border: none; border-radius: 5px; background: rgba(255, 255, 255, 0.3); color: #5a1dea; font-size: 16px; outline: none;"></textarea>
+            <textarea placeholder="Enter your message" name="message" required></textarea>
         </div>
         <button type="submit">Send Message</button>
         <div class="err-message">
-            {{ err }} {{ msg }}
+            {{ msg }}
         </div>
         <div class="support-link">
             <p>Need further assistance? <a href="/support">Visit our Support Center</a></p>

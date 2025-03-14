@@ -126,5 +126,34 @@ def logout():
 @app.route('/aboutus')
 def aboutus():
     return render_template('aboutus.html')
+@app.route('/contacting', methods=['POST'])
+def contacting():
+    name = request.form.get('name') 
+    email = request.form.get('email')
+    message = request.form.get('message') 
+
+    # Store contact message
+    data = {"name": name, "email": email, "message": message}
+    with open('contact_messages.txt', 'a') as file:
+        file.write(f"Name: {name}\nEmail: {email}\nMessage: {message}\n\n")
+
+    # Send Thank You Email
+    msg = Message('Thanks for contacting mLearn', sender='22f01a0545@gmail.com', recipients=[email])
+    msg.body = f'''Dear {name},
+
+Thank you for reaching out to mLearn! We appreciate your message and will respond within 24-48 hours.
+
+Here’s a summary of your message:
+
+Name: {name}
+Email: {email}
+Message: {message} 
+
+Best regards,
+The mLearn Team
+'''
+    mail.send(msg)
+
+    return render_template('contactus.html', msg="Your message has been sent successfully!")
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True, port=8000)
